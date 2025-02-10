@@ -8,6 +8,7 @@ pipeline {
         stage('Hello') {
             steps {
                 sh 'date'
+                 sh'echo "this is test stage"'
                 
             }
         }
