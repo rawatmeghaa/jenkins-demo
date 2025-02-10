@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+
+    environment{
+        name='megha'
+    }
+    stages {
+        stage('Hello') {
+            steps {
+                sh 'date'
+                
+            }
+        }
+        stage('env varaibales'){
+            steps{
+                sh 'echo "${BUILD_ID}"'
+                sh 'echo "${name}"'
+            }
+        }
+        stage('final'){
+            environment{
+                name='ayesha'
+            }
+            steps{
+                sh 'echo "bye ${name}"'
+                echo 'bye bye'
+            }
+        }
+    }
+     post{
+            always{
+                echo 'it will run always'
+            }
+        }
+   }
