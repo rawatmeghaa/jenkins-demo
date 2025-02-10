@@ -15,6 +15,7 @@ pipeline {
             steps{
                 sh 'echo "${BUILD_ID}"'
                 sh 'echo "${name}"'
+                sh 'echo "hey my name is ${name}"'
             }
         }
         stage('final'){
